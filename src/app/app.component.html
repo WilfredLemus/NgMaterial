@@ -1,20 +1,179 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
+<md-sidenav-container>
 
+  <md-sidenav #sidenav mode="side" opened="true">
+
+    <md-toolbar class="top-user">
+      <span>
+         <img src="http://coding.infoconex.com/Custom/Themes/Standard/src/img/logo.png" alt="User">
+      </span>
+      <md-toolbar-row>
+        <span>Wilfred Lemus</span>
+        <span class="user-email">wilfred.lemus@gmail.com <md-icon color="accent"  mdTooltip="Email Verificado!" >verified_user</md-icon></span>
+      </md-toolbar-row>
+    </md-toolbar>
+
+    <div class="vertical-menu">
+      <a class="vertical-menu-item" >
+        <md-icon>chrome_reader_mode</md-icon> 
+        Blog
+      </a>
+      <a class="vertical-menu-item" >
+        <md-icon>collections_bookmark</md-icon> 
+        Recursos
+      </a>
+      <a class="vertical-menu-item" >
+        <md-icon>reorder</md-icon> 
+        Talleres
+      </a>
+    </div>
+    <span class="divier-menu"></span>
+    <div class="vertical-menu">
+      <span class="text-muted">Comunidad</span>
+      <a class="vertical-menu-item">
+        <i class="icon-menu fa fa-facebook-official"></i>
+        Facebook
+      </a>
+      <a class="vertical-menu-item" >
+        <i class="icon-menu fa fa-youtube-play"></i>
+        Youtube
+      </a>
+      <a class="vertical-menu-item" >
+        <i class="icon-menu fa fa-slack"></i>
+        Slack
+      </a>
+    </div>
+    <span class="divier-menu"></span>
+    <div class="vertical-menu">
+      <span class="text-muted">Configuracion</span>
+      <a class="vertical-menu-item">
+        <md-icon>person</md-icon>
+        Perfil de Usuario
+      </a>
+      <a class="vertical-menu-item">
+        <md-icon>notifications</md-icon>
+        Notificaciones
+      </a>
+      <a class="vertical-menu-item" >
+        <md-icon>power_settings_new</md-icon>
+        Cerrar Sesion
+      </a>
+    </div>
+
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button class="hamburger" md-button title="Menu" (click)="sidenav.toggle()">
+        <md-icon class="mat-icon">menu</md-icon>
+    </button>
+
+    Angular Latinoamerica
+
+    <span class="app-toolbar-filler"></span>
+    <button md-button><md-icon>notifications</md-icon></button>
+    <button md-button><md-icon>power_settings_new</md-icon></button>
+  </md-toolbar>
+
+  <md-card>
+    <button md-button>FLAT</button>
+    <button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>
+    <button md-raised-button color="primary">PRIMARY RAISED</button>
+    <button md-raised-button color="accent">ACCENT RAISED</button>
+  </md-card>
+
+  <md-card>
+    <md-checkbox>Unchecked</md-checkbox>
+    <md-checkbox [checked]="true">Checked</md-checkbox>
+    <md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
+    <md-checkbox [disabled]="true">Disabled</md-checkbox>
+  </md-card>
+
+  <md-card>
+    <md-radio-button name="symbol">Alpha</md-radio-button>
+    <md-radio-button name="symbol">Beta</md-radio-button>
+    <md-radio-button name="symbol" disabled>Gamma</md-radio-button>
+  </md-card>
+
+  <md-card class="app-input-section">
+    <md-input-container>
+      <input mdInput placeholder="First name" value="Sushi">
+    </md-input-container>
+
+    <md-input-container>
+      <input mdInput #nickname maxlength="256" placeholder="Nickname">
+      <md-hint align="start"><strong>Don't disclose personal info</strong> </md-hint>
+      <md-hint align="end">{{nickname.value.length}} / 256</md-hint>
+    </md-input-container>
+
+  </md-card>
+
+  <md-card>
+    <md-list class="app-list">
+      <md-list-item *ngFor="let food of foods">
+        <h3 md-line>{{food.name}}</h3>
+        <p md-line class="demo-secondary-text">{{food.rating}}</p>
+      </md-list-item>
+    </md-list>
+  </md-card>
+
+  <md-card>
+    <md-spinner class="app-spinner"></md-spinner>
+    <md-spinner color="accent" class="app-spinner"></md-spinner>
+  </md-card>
+
+  <md-card>
+    <md-progress-bar mode="indeterminate"></md-progress-bar>
+    <label>
+      Indeterminate progress-bar
+      <md-progress-bar
+          class="app-progress"
+          mode="indeterminate"
+          aria-label="Indeterminate progress-bar example"></md-progress-bar>
+    </label>
+
+    <label>
+      Determinate progress bar - {{progress}}%
+      <md-progress-bar
+          class="app-progress"
+          color="accent"
+          mode="determinate"
+          [value]="progress"
+          aria-label="Determinate progress-bar example"></md-progress-bar>
+    </label>
+  </md-card>
+
+  <md-card>
+    <md-tab-group>
+      <md-tab label="Earth">
+        <p>EARTH</p>
+      </md-tab>
+      <md-tab label="Fire">
+        <p>FIRE</p>
+      </md-tab>
+    </md-tab-group>
+  </md-card>
+
+  <md-card>
+    <md-icon>build</md-icon>
+  </md-card>
+
+  <md-card>
+    <button md-button [mdMenuTriggerFor]="menu">Menu</button>
+  </md-card>
+
+  <md-menu #menu="mdMenu">
+    <button md-menu-item>Lemon</button>
+    <button md-menu-item>Lime</button>
+    <button md-menu-item>Banana</button>
+  </md-menu>
+
+  <md-card>
+    <p>Last dialog result: {{lastDialogResult}}</p>
+    <button md-raised-button (click)="openDialog()">DIALOG</button>
+    <button md-raised-button (click)="showSnackbar()">SNACKBAR</button>
+  </md-card>
+
+</md-sidenav-container>
+
+<span class="app-action" >
+  <button md-fab><md-icon>check circle</md-icon></button>
+</span>
