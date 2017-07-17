@@ -50,8 +50,8 @@
         Perfil de Usuario
       </a>
       <a class="vertical-menu-item">
-        <md-icon>notifications</md-icon>
-        Notificaciones
+        <md-icon>messages</md-icon>
+        Mensages
       </a>
       <a class="vertical-menu-item" >
         <md-icon>power_settings_new</md-icon>
@@ -65,111 +65,161 @@
     <button class="hamburger" md-button title="Menu" (click)="sidenav.toggle()">
         <md-icon class="mat-icon">menu</md-icon>
     </button>
+    <img src="assets/img/Ng.png" alt="Logo Angular"> 
+    Comunidad Latinoamerica
 
-    Angular Latinoamerica
+    <span class="toolbar-filler"></span>
 
-    <span class="app-toolbar-filler"></span>
     <button md-button><md-icon>notifications</md-icon></button>
-    <button md-button><md-icon>power_settings_new</md-icon></button>
+
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>
+        <md-icon>settings</md-icon>
+        <span>Configuracion</span>
+      </button>
+      <button md-menu-item>
+        <md-icon>notifications_off</md-icon>
+        <span>Desactivar Notif.</span>
+      </button>
+      <button md-menu-item>
+        <md-icon>power_settings_new</md-icon>
+        <span>Salir</span>
+      </button>
+    </md-menu>
   </md-toolbar>
 
   <md-card>
+    <md-card-header>
+      <md-card-title class="text-muted">BOTONES</md-card-title>
+    </md-card-header>
+
     <button md-button>FLAT</button>
-    <button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>
-    <button md-raised-button color="primary">PRIMARY RAISED</button>
-    <button md-raised-button color="accent">ACCENT RAISED</button>
+    <button md-button color="primary">FLAT PRIMARY</button>
+    <button md-button color="accent">FLAT ACCENT</button>
+    <button md-button color="warn">FLAT WARN</button>
+    <br><br>
+    <button md-raised-button>RAISED</button>
+    <button md-raised-button color="primary">RAISED PRIMARY</button>
+    <button md-raised-button color="accent">RAISED ACCENT</button>
+    <button md-raised-button color="warn">RAISED WARN</button>
+    <br><br>
+    <button md-icon-button color="accent"><md-icon>messages</md-icon></button>
+    <button md-fab><md-icon>check</md-icon></button>
+    <button md-mini-fab><md-icon>check</md-icon></button>
+
+    <md-button-toggle-group #group="mdButtonToggleGroup">
+      <md-button-toggle value="left">
+        <md-icon>format_align_left</md-icon>
+      </md-button-toggle>
+      <md-button-toggle value="center">
+        <md-icon>format_align_center</md-icon>
+      </md-button-toggle>
+      <md-button-toggle value="right">
+        <md-icon>format_align_right</md-icon>
+      </md-button-toggle>
+      <md-button-toggle value="justify">
+        <md-icon>format_align_justify</md-icon>
+      </md-button-toggle>
+    </md-button-toggle-group>
   </md-card>
 
   <md-card>
-    <md-checkbox>Unchecked</md-checkbox>
-    <md-checkbox [checked]="true">Checked</md-checkbox>
-    <md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
-    <md-checkbox [disabled]="true">Disabled</md-checkbox>
-  </md-card>
+    <md-card-header>
+      <md-card-title class="text-muted">FORM</md-card-title>
+    </md-card-header>
 
-  <md-card>
-    <md-radio-button name="symbol">Alpha</md-radio-button>
-    <md-radio-button name="symbol">Beta</md-radio-button>
-    <md-radio-button name="symbol" disabled>Gamma</md-radio-button>
-  </md-card>
-
-  <md-card class="app-input-section">
-    <md-input-container>
-      <input mdInput placeholder="First name" value="Sushi">
+    <md-input-container class="space-elemts">
+      <input mdInput placeholder="Nombre">
     </md-input-container>
 
-    <md-input-container>
-      <input mdInput #nickname maxlength="256" placeholder="Nickname">
-      <md-hint align="start"><strong>Don't disclose personal info</strong> </md-hint>
-      <md-hint align="end">{{nickname.value.length}} / 256</md-hint>
+    <md-input-container class="space-elemts">
+      <input mdInput #username maxlength="5" placeholder="Username">
+      <md-hint align="end">{{username.value.length}} / 5</md-hint>
     </md-input-container>
 
+    <md-input-container class="space-elemts">
+      <input mdInput placeholder="Email" [formControl]="emailFormControl" >
+      <md-error *ngIf="emailFormControl.hasError('email')">
+        Email Invalido!
+      </md-error>
+      <md-error *ngIf="emailFormControl.hasError('required')">
+        Email es <strong>obligatorio</strong>
+      </md-error>
+    </md-input-container>
+
+    <md-input-container class="space-elemts">
+      <input mdInput placeholder="IP" [formControl]="ipFormControl" >
+      <md-error *ngIf="ipFormControl.hasError('pattern')">
+        IP Invalido!
+      </md-error>
+      <md-error *ngIf="ipFormControl.hasError('required')">
+        IP es <strong>obligatorio</strong>
+      </md-error>
+    </md-input-container>
+
+    <md-input-container class="space-elemts">
+      <input mdInput [mdDatepicker]="picker" placeholder="Fecha">
+      <button mdSuffix [mdDatepickerToggle]="picker"></button>
+    </md-input-container>
+    <md-datepicker #picker></md-datepicker>
+
+    <br><br><br>
+    <md-checkbox class="space-elemts">Material Design</md-checkbox>
+
+    <md-radio-group class="space-elemts">
+      <md-radio-button value="1">Opcion 1</md-radio-button>
+      <md-radio-button value="2">Opcion 2</md-radio-button>
+    </md-radio-group>
+
+    <md-select placeholder="Lenguaje" class="space-elemts">
+      <md-option value="Javascript">Javascript</md-option>
+      <md-option value="Python">Python</md-option>
+      <md-option value="Go">Go</md-option>
+      <md-option value="Java">Java</md-option>
+    </md-select>
+
+    <md-slide-toggle class="space-elemts">Activar Notif.!</md-slide-toggle>
+    
   </md-card>
 
   <md-card>
-    <md-list class="app-list">
-      <md-list-item *ngFor="let food of foods">
-        <h3 md-line>{{food.name}}</h3>
-        <p md-line class="demo-secondary-text">{{food.rating}}</p>
-      </md-list-item>
-    </md-list>
-  </md-card>
+    <md-card-header>
+      <md-card-title class="text-muted">TABS</md-card-title>
+    </md-card-header>
 
-  <md-card>
-    <md-spinner class="app-spinner"></md-spinner>
-    <md-spinner color="accent" class="app-spinner"></md-spinner>
-  </md-card>
-
-  <md-card>
-    <md-progress-bar mode="indeterminate"></md-progress-bar>
-    <label>
-      Indeterminate progress-bar
-      <md-progress-bar
-          class="app-progress"
-          mode="indeterminate"
-          aria-label="Indeterminate progress-bar example"></md-progress-bar>
-    </label>
-
-    <label>
-      Determinate progress bar - {{progress}}%
-      <md-progress-bar
-          class="app-progress"
-          color="accent"
-          mode="determinate"
-          [value]="progress"
-          aria-label="Determinate progress-bar example"></md-progress-bar>
-    </label>
-  </md-card>
-
-  <md-card>
     <md-tab-group>
-      <md-tab label="Earth">
-        <p>EARTH</p>
+      <md-tab label="Chips">
+        <div class="tab-content">
+          <md-chip-list>
+            <md-chip>One fish</md-chip>
+            <md-chip>Two fish</md-chip>
+            <md-chip color="primary" selected="true">Primary fish</md-chip>
+            <md-chip color="accent" selected="true">Accent fish</md-chip>
+          </md-chip-list>
+        </div>
       </md-tab>
-      <md-tab label="Fire">
-        <p>FIRE</p>
+      <md-tab label="Progress">
+        <div class="tab-content">
+          <md-spinner></md-spinner>
+          <br><br><br>
+          <md-progress-bar mode="indeterminate"></md-progress-bar>
+        </div>
       </md-tab>
+      <md-tab label="Dialog">
+        <div class="tab-content">
+          <button md-raised-button (click)="openDialog()">DIALOG</button>
+        </div>
+      </md-tab>
+      <md-tab label="Snackbar">
+        <div class="tab-content">
+          <button md-raised-button (click)="showSnackbar()">SNACKBAR</button>
+        </div>
+      </md-tab>
+
     </md-tab-group>
-  </md-card>
-
-  <md-card>
-    <md-icon>build</md-icon>
-  </md-card>
-
-  <md-card>
-    <button md-button [mdMenuTriggerFor]="menu">Menu</button>
-  </md-card>
-
-  <md-menu #menu="mdMenu">
-    <button md-menu-item>Lemon</button>
-    <button md-menu-item>Lime</button>
-    <button md-menu-item>Banana</button>
-  </md-menu>
-
-  <md-card>
-    <p>Last dialog result: {{lastDialogResult}}</p>
-    <button md-raised-button (click)="openDialog()">DIALOG</button>
-    <button md-raised-button (click)="showSnackbar()">SNACKBAR</button>
   </md-card>
 
 </md-sidenav-container>

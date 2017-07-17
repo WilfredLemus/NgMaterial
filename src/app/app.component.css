@@ -1,3 +1,10 @@
+/* CONTENEDOR PRINCIPAL */
+md-sidenav-container {
+  background-color: #efefef;
+  min-height: 100vh;
+}
+
+/* PANEL IZQUIERDO */
 md-sidenav {
   max-width: 230px;
   box-shadow: 3px 0 6px rgba(0, 0, 0, .24);
@@ -44,7 +51,6 @@ md-sidenav {
 }
 
 .divier-menu {
-  /*border-bottom: 1px solid rgba(0, 0, 0, .24);*/
   fill: #737373;
   display: block;
   border-top: 1px solid;
@@ -80,9 +86,11 @@ md-sidenav {
     font-size: 18px;
     display: inline-block;
 }
+
 .vertical-menu-item md-icon {
   font-size: 18px;
 }
+
 .vertical-menu-item .icon-menu {
   font-size: 18px;
   padding-right: 0.4em;
@@ -92,84 +100,40 @@ md-sidenav {
     background-color: #d6d6d6;
 }
 
-/*.top-user .img-user {
-  border: 1px solid red;
-  display: block;
-  width: 100%;
-  align-items: center;
+
+/* BARRA SUPERIOR */
+
+md-toolbar {
+   padding: 0; 
 }
 
-
-.top-user img {
-  height: 70px;
+.hamburger.mat-button {
+   height: 100%;
+  margin: 0px;
+  padding: 0px; 
 }
 
-.top-user md-list {
-  height: 1em;
+md-toolbar img {
+  height: 45px;
+  margin-right: 0.3em;
 }
 
-.top-user md-list md-list-item {
-  color: white;
-  font-size: 12px;
-}*/
+.toolbar-filler {
+  flex: 1 1 auto;
+}
 
+md-menu {
+  margin: 0.7em;
+}
 
-
-
-
-
-
-
-
+/* CONTENIDO */
 
 md-card {
   margin: 20px;
 }
 
-.app-content md-checkbox {
-  margin: 10px;
-}
-
-.app-toolbar-filler {
-  flex: 1 1 auto;
-}
-
-.app-toolbar-menu {
-  padding: 9px 14px 0 14px;
-  color: white;
-}
-
-.app-icon-button {
-  box-shadow: none;
-  user-select: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  filter: none;
-  font-weight: normal;
-  height: auto;
-  line-height: inherit;
-  margin: 0;
-  min-width: 0;
-  padding: 0;
-  text-align: left;
-  text-decoration: none;
-}
-
-.hamburger.mat-button {
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-
-.hamburger.mat-button:not(.starting) {
-    transition-duration: 0.4s;
-    transition-property: color, margin;
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-md-toolbar {
-  padding: 0;
+.space-elemts {
+  margin-left: 0.8em;
 }
 
 .app-action {
@@ -179,22 +143,11 @@ md-toolbar {
   right: 20px;
 }
 
-.app-spinner {
-  height: 30px;
-  width: 30px;
-  display: inline-block;
+md-checkbox {
+   margin: 10px;
 }
 
-.app-input-icon {
-  font-size: 16px;
-}
-
-.app-list {
-  border: 1px solid rgba(0,0,0,0.12);
-  width: 350px;
-  margin: 20px;
-}
-
-.app-progress {
-  margin: 20px;
+.tab-content {
+  padding: 1em;
+  min-height: 120px;
 }

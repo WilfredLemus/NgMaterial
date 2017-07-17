@@ -1,46 +1,67 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { 
-        MdButtonModule, 
-        MdDatepickerModule, 
-        MdNativeDateModule, 
-        MdInputModule, 
-        MdIconModule,
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
         MdSidenavModule,
-        MdCheckboxModule,
-        MdProgressBarModule,
-        MdMenuModule,
         MdToolbarModule,
-        MdCardModule,
-        MdListModule,
-        MdGridListModule,
+        MdIconModule,
         MdTooltipModule,
+        MdButtonModule,
+        MdButtonToggleModule,
+        MdMenuModule,
+        MdCardModule,
+        MdInputModule,
+        MdDatepickerModule,
+        MdNativeDateModule,
+        MdCheckboxModule,
+        MdRadioModule,
+        MdSelectModule,
+        MdSlideToggleModule,
+        MdTabsModule,
+        MdChipsModule,
+        MdProgressSpinnerModule,
+        MdProgressBarModule,
+        MdDialogModule,
+        MdSnackBarModule
+
        } from '@angular/material';
 
-import { AppComponent } from './app.component';
+import { AppComponent, DialogContent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogContent
   ],
+  entryComponents : [DialogContent],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
-    MdButtonModule,
-    MdDatepickerModule,
-    MdInputModule,
-    MdNativeDateModule,
-    MdIconModule,
+    // MATERIAL
     MdSidenavModule,
-    MdCheckboxModule,
-    MdProgressBarModule,
-    MdMenuModule,
     MdToolbarModule,
+    MdIconModule,
+    MdTooltipModule,
+    MdButtonModule,
+    MdButtonToggleModule,
+    MdMenuModule,
     MdCardModule,
-    MdListModule,
-    MdGridListModule,
-    MdTooltipModule
+    MdInputModule,
+    MdDatepickerModule,
+    MdNativeDateModule,
+    MdCheckboxModule,
+    MdRadioModule,
+    MdSelectModule,
+    MdSlideToggleModule,
+    MdTabsModule,
+    MdChipsModule,
+    MdProgressSpinnerModule,
+    MdProgressBarModule,
+    MdDialogModule,
+    MdSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
